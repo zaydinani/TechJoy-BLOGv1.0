@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/icons8-read-96.png" />
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <!--search bar icon-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./css/QnA.css" />
+    <!-- //*Footer  -->
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <!-- //*Font awsome  -->
+    <script
+      src="https://kit.fontawesome.com/53405766b0.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>TechJoy || FAQ</title>
+  </head>
+  <body>
+    <%- include('./nav'); -%>
+
+    <!--top picture and its content-->
+    <div class="question-picture">
+      <img src="./images/undraw_faq_re_31cw.svg" alt="" />
+      <div class="image-content-container">
+        <h1>welcome to tech<span>joy</span></h1>
+        <p>here you well find answers to our frequently asked questions</p>
+      </div>
+    </div>
+    <!--questions-->
+    <div class="container">
+      <h1>Frequently Asked Questions</h1>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button id="accordion-button-1" aria-expanded="false">
+            <span class="accordion-title">Who we are ?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              We are a group of three passionate developers from morocco
+              dedicated to learning new technologies and providing the best user
+              experience on our services for people to enjoy.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-5" aria-expanded="false">
+            <span class="accordion-title">Are we open for hire ?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Yes we are open for hire, We can help you in developing your next
+              idea and making it a fully functional website as you please, or
+              for consulting opportunities, for more in-depth information
+              contact us in our personal email : zaydinani@protonmail.com
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-2" aria-expanded="false">
+            <span class="accordion-title">What to expect from this blog ?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              In this blog, you will go with us on our journey as we learn more
+              about coding since we will be sharing our progress with you
+              through this blog, and also we will be sharing more information
+              that we find interesting about tech in general.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-3" aria-expanded="false">
+            <span class="accordion-title">Why we started this blog ?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              we started this blog to test our knowledge of coding and to show
+              our skills to the world as we progress even more.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-4" aria-expanded="false">
+            <span class="accordion-title"
+              >can you use our articles or things we share in this blog ?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Yes you can use our articles or any of the other information we
+              will be sharing on this blog, But we will appreciate if you give
+              us credit by writing where you got this information from.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-5" aria-expanded="false">
+            <span class="accordion-title">how we made this blog ?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              we made this blog using many languages such as HTML, CSS3, and
+              JavaScript for front-end together with node.js and express.js for
+              back-end as well as mySQL for the database.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--contact us -->
+    <div class="contact">
+      <p>if your questions are not answered above make sure to contact us</p>
+      <button class="btn"><a href="./contact">contact us</a></button>
+    </div>
+    <%- include('./footer'); -%>
+
+    <script defer src="./JavaScript/QnA.js"></script>
+  </body>
+</html>

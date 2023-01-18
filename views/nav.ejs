@@ -1,0 +1,42 @@
+<nav>
+  <h1><a href="./home">TechJoy</a></h1>
+  <% if(isLoggedIn ) { %>
+  <ul>
+    <li><a href="./home">home</a></li>
+    <li><a href="./blog">blog</a></li>
+    <li><a href="./FAQ">About</a></li>
+    <li><a href="./contact">contact us</a></li>
+  </ul>
+  <!-- MY ACOUNT  -->
+  <span>
+    My account
+    <div class="dropdown_menu">
+      <div class="option">
+        <i class="fa-solid fa-sliders"></i>
+        <a href="#">settings</a>
+      </div>
+      <div class="option">
+        <i class="fa-sharp fa-solid fa-right-from-bracket"></i>
+        <form action="logOut" method="post">
+          <button type="submit">log out</button>
+        </form>
+      </div>
+    </div>
+  </span>
+  <% }else { %>
+  <ul>
+    <li><a href="./home">home</a></li>
+    <li><a href="./blog">blog</a></li>
+    <li><a href="./dash">Admin</a></li>
+    <li><a href="./contact">contact us</a></li>
+  </ul>
+  <!-- /login -->
+  <a href="./login"> Login </a>
+  <% } %>
+  <!-- Ham menu -->
+  <div class="hamContainer">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</nav>

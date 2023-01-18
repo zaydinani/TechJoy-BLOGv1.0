@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./images/icons8-read-96.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/blogFeed.css" />
+    <!-- //*Font awsome  -->
+    <script
+      src="https://kit.fontawesome.com/53405766b0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
+
+    <!-- //*Footer  -->
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <title>TechJoy</title>
+  </head>
+  <body>
+    <%- include('./nav'); -%>
+
+
+    <!--* / Latest section  -->
+    <section id="Lateset_Container">
+      <!-- / Latest article -->
+      <% for(let i = articlesData.length-1 ; i < articlesData.length;i++) { %>
+      <div id="latesetArticle">
+        <a href="">
+          <img
+            src=<%=articlesData[i].image_pathLocation %>
+            alt=""
+          />
+        </a>
+        <h1>
+          <a href="#"
+            ><%=articlesData[i].article_title %></a
+          >
+        </h1>
+        <span id="tag"><%=articlesData[i].tag_name %></span>
+      </div>
+        <% } %>
+
+      <!-- / side article links -->
+      <div class="side_actions">
+        <div class="BtnsSideContiner">
+          <span id="PupBtn">Discover</span>
+          <span id="RecBtn">Recent</span>
+        </div>
+
+      <% for(let i=1; i <articlesData.length;i+=2) { %>
+
+            <div class="s_a_SLOT">
+                <img
+                  src=<%=articlesData[i].image_pathLocation %>
+                  alt=<%=articlesData[i].article_title %>
+                />
+                <h1><a href=""> <%=articlesData[i].article_title %></a></h1>
+                <h3 class="Art_date"> <%=articlesData[i].article_created_at %></h3>
+            </div>
+        <% } %> 
+
+      </div>
+    </section>
+
+    <!--!------------------------------- Rest Articls ----------------------->
+    <div class="sec__title">
+      <h1>RECENT</h1>
+    </div>
+
+    <div class="Rec__articlesWrp">
+      <div class="recent__artContainer">
+          <% for(let i=1; i <articlesData.length;i++) { %>
+              <article>
+                <div class="img_wpr">
+                  <a href="">
+                    <img
+                      src=<%=articlesData[i].image_pathLocation  %>
+                      alt=<%=articlesData[i].article_title  %>
+                    />
+                  </a>
+                </div>
+
+                <div class="art__detailsC">
+                  <div class="articleDATA">
+                    <img src=<%=articlesData[i].admin_img_path  %> ="admin_img" />
+                    <span><%=articlesData[i].tag_name %></span>
+                    <p class="Art_date"><%=articlesData[i].article_created_at  %></p>
+                  </div>
+
+                  <h1>
+                    <a href=""
+                      ><%=articlesData[i].article_title  %></a
+                    >
+                  </h1>
+                  <p class="article_desc">
+                    <%=articlesData[i].article_description  %>
+                  </p>
+                  <a href="#">
+                  <i class="fa-solid fa-ellipsis"></i>
+                </a>
+                </div>
+              </article>
+          <% } %> 
+      </div>
+      <!-- ::://// -->
+      <div class="tagsContiner">
+           <h3>Tag Cloud</h3>
+            <hr />
+          <div class="content-tags">
+            <% for(let i=0; i <articlesData.length;i++) { %>
+            <button>
+              <%=articlesData[i].tag_name %>
+            </button>
+          <% } %> 
+          </div>
+      </div>
+    </div>
+    <!--!-------------------------------Sub_container----------------------->
+  <div class="Sub_container">
+      <img src="/images/undraw_mailbox_re_dvds.svg" alt="" />
+      <h1>TechJoy</h1>
+      <p>
+        Hello, We're content writer/Programmers who are fascinated by
+        technology, Programming and lifestyle. We help clients bring their ideas
+        to life and change the world.
+      </p>
+        
+      <h3>Join our news letter !!</h3>
+      <form action="ty" method="post">
+        <div class="sub_wrpper">
+          <input type="email" placeholder="Email-adress" name="sub_usrEmail_feedpg" required/>
+          <button type="submit">subscribe</button>
+        </div>
+      </form>
+    </div> 
+    <!--!-------------------------------footer----------------------->
+    <%- include('./footer'); -%>
+
+
+    <script src="./JavaScript/blogFeed.js"></script>
+  </body>
+</html>

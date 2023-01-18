@@ -19,7 +19,7 @@
       rel="stylesheet"
       href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
     />
-    <link rel="stylesheet" href="./css/contactus.css" />
+    <link rel="stylesheet" href="css/contactus.css" />
     <link
       rel="shortcut icon"
       href="./images/icons8-read-96.png"
@@ -60,41 +60,42 @@
         </div>
       </div>
       <div class="form-container">
-        <form>
+        <form action="/newMailer" method="POST">
           <div class="form">
             <input
               type="text"
               id="name"
               class="form__input"
               autocomplete="off"
-              placeholder=" "
+              name="conta_name"
+              required
             />
             <label for="name" class="form__label">your name</label>
           </div>
           <div class="form">
             <input
-              type="text"
+              type="email"
               id="email"
               class="form__input"
               autocomplete="off"
-              placeholder=" "
+              name="conta_email"
+              required
             />
             <label for="email" class="form__label">Email</label>
           </div>
           <div class="form-text">
             <textarea
-              id="story"
-              name="story"
+              name="conta_msg"
+              id="conta_msg"
               rows="5"
               cols="33"
               class="form__area"
-              autocomplete="off"
-              placeholder=" "
+              required
             ></textarea>
-            <label for="message" class="form__label">message</label>
+            <label for="conta_msg" class="form__label">message</label>
           </div>
           <div class="btn">
-            <button>send message</button>
+            <button type="submit">send message</button>
           </div>
         </form>
       </div>

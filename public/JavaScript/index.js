@@ -32,7 +32,12 @@ burger.addEventListener("click", () => {
 // DROP DOWN MENU
 const myAccBtn = document.querySelector("nav > span");
 const dropMenu = document.querySelector(".dropdown_menu");
+if (myAccBtn)
+  myAccBtn.addEventListener("click", () => {
+    dropMenu.classList.toggle("dropdown_Active");
+  });
 
-myAccBtn.addEventListener("click", () => {
-  dropMenu.classList.toggle("dropdown_Active");
+const articleDate = document.querySelectorAll(".Art_date");
+articleDate.forEach((art) => {
+  art.innerHTML = art.innerHTML.slice(0, 15);
 });

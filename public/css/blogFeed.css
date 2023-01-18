@@ -46,7 +46,6 @@ nav > span {
   color: azure;
   position: relative;
   cursor: pointer;
-  display: none;
 }
 nav > span::after {
   content: "";
@@ -305,12 +304,12 @@ nav .hamContainer .line2 {
   cursor: pointer;
 }
 #Lateset_Container .side_actions .s_a_SLOT {
-  width: 100%;
   min-height: 5.5rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   position: relative;
+  padding: 15px;
 }
 #Lateset_Container .side_actions .s_a_SLOT img {
   width: 42px;
@@ -330,8 +329,8 @@ nav .hamContainer .line2 {
 #Lateset_Container .side_actions .s_a_SLOT h3 {
   font-size: 0.7rem;
   position: absolute;
-  bottom: 5px;
-  left: 4.5rem;
+  bottom: 0;
+  left: 6rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -351,7 +350,6 @@ nav .hamContainer .line2 {
     border-radius: 20px;
   }
   #Lateset_Container .side_actions .s_a_SLOT {
-    width: 100%;
     min-height: 5.5rem;
   }
   #Lateset_Container .side_actions .s_a_SLOT img {
@@ -384,12 +382,12 @@ nav .hamContainer .line2 {
     width: 90vw;
   }
   #Lateset_Container .side_actions .s_a_SLOT {
-    width: 100%;
     min-height: 5.5rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     position: relative;
+    padding: 15px;
   }
   #Lateset_Container .side_actions .s_a_SLOT img {
     width: 45px;
@@ -399,13 +397,13 @@ nav .hamContainer .line2 {
     font-family: "Cairo", sans-serif;
     font-weight: bold;
     color: #203656;
-    padding: 0 10px;
+    padding: 5px 25px;
   }
   #Lateset_Container .side_actions .s_a_SLOT h3 {
     font-size: 0.7rem;
     position: absolute;
     bottom: 5px;
-    left: 42%;
+    left: 6.1rem;
   }
 }
 @media screen and (max-width: 320px) {
@@ -606,6 +604,7 @@ nav .hamContainer .line2 {
   max-height: 80vh;
   border: 1px solid #ebebeb;
   border-radius: 10px;
+  padding: 20px 0;
 }
 .Rec__articlesWrp .tagsContiner > h3 {
   font-size: 1.5em;
@@ -624,7 +623,7 @@ nav .hamContainer .line2 {
 }
 .Rec__articlesWrp .tagsContiner .content-tags {
   width: 100%;
-  min-height: 70%;
+  min-height: 40%;
   margin-top: 2em;
 }
 .Rec__articlesWrp .tagsContiner .content-tags > button {

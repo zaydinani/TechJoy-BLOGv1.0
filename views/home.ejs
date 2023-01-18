@@ -214,21 +214,8 @@
 
             <span>MYSQL...</span>
           </div>
-
-          <!-- <div class="per__links">
-            <a href="#">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="#">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a href="#">
-              <i class="fa-brands fa-square-instagram"></i>
-            </a>
-            <a href="#">
-              <i class="fa-brands fa-linkedin"></i>
-            </a> 
-          </div>-->
+          <!-- YET TO BE ADDED BY @Yassine -->
+          </div>
         </div>
       </div>
     </div>
@@ -239,63 +226,23 @@
         <h1>CHECK OUT</h1>
       </div>
       <div class="articles_wrapper">
+        <% for(let i = 0; i <3;i++) { %>
         <article>
-          <img
-            src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/WP3TTg5jDHTfXskQy36agDS8"
-            alt=""
-          />
+          <!-- prettier-ignore -->
+          <img src=<%= artl[i].image_pathLocation %> alt="cover"/>
           <div class="metData">
             <div class="poster_pic">
-              <img src="./images/zyd_inn.jpg" alt="" />
+              <!-- prettier-ignore -->
+              <img src=<%=artl[i].admin_img_path %> alt="author" />
             </div>
 
-            <span id="TAG">JavaScript</span>
-            <p>August 20, 2022</p>
+            <span id="TAG"><%=artl[i].tag_name %></span>
+            <p class="Art_date"><%=artl[i].article_created_at%></p>
           </div>
 
-          <h1><a href="">JavaScript Roadmap for absolutes 2022</a></h1>
+          <h1><a href=""><%=artl[i].article_title %></a></h1>
         </article>
-
-        <article>
-          <img
-            src="https://s7280.pcdn.co/wp-content/uploads/2016/06/database-blue.png"
-            alt=""
-          />
-
-          <div class="metData">
-            <div class="poster_pic">
-              <img src="./images/yssin.jpg" alt="" />
-            </div>
-
-            <span id="TAG">JavaScript</span>
-            <p>August 10, 2022</p>
-          </div>
-
-          <h1><a href="">When should I start learning DATABASES</a></h1>
-        </article>
-
-        <article>
-          <img
-            src="https://miro.medium.com/max/1400/1*CH9zWYSU4XZudQ4CQDWafA.jpeg"
-            alt=""
-          />
-
-          <div class="metData">
-            <div class="poster_pic">
-              <img src="./images/Untitled-1.png" alt="" />
-            </div>
-
-            <span id="TAG">JavaScript</span>
-            <p>August 20, 2022</p>
-          </div>
-
-          <h1>
-            <a href=""
-              >Why I heard that All Progrommers are self-taught even with a
-              dgree
-            </a>
-          </h1>
-        </article>
+        <% } %>
       </div>
     </div>
 
@@ -307,7 +254,7 @@
       <div id="map"></div>
 
       <div class="contactUs__form">
-        <form>
+        <form method="POST" action="/sub_thk">
           <div class="name_eml">
             <input
               type="text"
@@ -318,8 +265,8 @@
             />
             <input
               type="email"
-              name="contactor_eml"
-              id="email"
+              name="contactor_email"
+              id="contactor_email"
               placeholder=" Email"
               required
             />
@@ -338,9 +285,10 @@
             cols="30"
             rows="10"
             placeholder="Your message"
+            required
           ></textarea>
 
-          <button>
+          <button type="submit">
             <span>SEND</span>
             <i class="fa-solid fa-paper-plane"></i>
           </button>
@@ -349,23 +297,24 @@
     </section>
 
     <section id="sub__newsSheet">
-      <div class="sub__container">
-        <img src="./images/undraw_confidential_letter_w6ux.svg" alt="draw" />
-        <p>
-          Subscribe to our newsletter in order to not miss any new arrivals
-          articles in our Blog.
-        </p>
-
-        <div class="sub__btn_wrapper">
-          <input
-            type="email"
-            name="email"
-            id="sub_email"
-            placeholder="Email-adress"
-          />
-          <button>Subscribe</button>
+      <form action="/thnkpage" method="post">
+        <div class="sub__container">
+          <img src="./images/undraw_confidential_letter_w6ux.svg" alt="draw" />
+          <p>
+            Subscribe to our newsletter in order to not miss any new arrivals
+            articles in our Blog.
+          </p>
+          <div class="sub__btn_wrapper">
+            <input
+              type="email"
+              name="new_email"
+              id="sub_email"
+              placeholder="Email-adress"
+            />
+            <button type="submit">Subscribe</button>
+          </div>
         </div>
-      </div>
+      </form>
     </section>
     <%- include('./footer'); -%>
     <script src="./JavaScript/index.js"></script>

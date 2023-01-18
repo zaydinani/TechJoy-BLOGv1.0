@@ -39,58 +39,42 @@
     <!--* / Latest section  -->
     <section id="Lateset_Container">
       <!-- / Latest article -->
+      <% for(let i = articlesData.length-1 ; i < articlesData.length;i++) { %>
       <div id="latesetArticle">
         <a href="">
           <img
-            src="https://cdn.shopify.com/s/files/1/0306/6419/6141/articles/coding_languages.png?v=1619126283"
+            src=<%=articlesData[i].image_pathLocation %>
             alt=""
           />
         </a>
         <h1>
           <a href="#"
-            >Is there is only one way to learn coding and get a job ?</a
+            ><%=articlesData[i].article_title %></a
           >
         </h1>
-        <span id="tag">Tutorial</span>
+        <span id="tag"><%=articlesData[i].tag_name %></span>
       </div>
+        <% } %>
+
       <!-- / side article links -->
       <div class="side_actions">
         <div class="BtnsSideContiner">
-          <span id="PupBtn">Pupolar</span>
+          <span id="PupBtn">Discover</span>
           <span id="RecBtn">Recent</span>
         </div>
-        <div class="s_a_SLOT">
-          <img
-            src="https://idsb.tmgrup.com.tr/ly/uploads/images/2022/08/22/226382.jpg"
-            alt=""
-          />
-          <h1><a href=""> 10 Benfits of learning to code in early ages</a></h1>
-          <h3>August 20, 2022</h3>
-        </div>
-        <div class="s_a_SLOT">
-          <img
-            src="https://idsb.tmgrup.com.tr/ly/uploads/images/2022/08/22/226382.jpg"
-            alt=""
-          />
-          <h1><a href=""> 10 Benfits of learning to code in early ages</a></h1>
-          <h3>August 20, 2022</h3>
-        </div>
-        <div class="s_a_SLOT">
-          <img
-            src="https://idsb.tmgrup.com.tr/ly/uploads/images/2022/08/22/226382.jpg"
-            alt=""
-          />
-          <h1><a href=""> 10 Benfits of learning to code in early ages</a></h1>
-          <h3>August 20, 2022</h3>
-        </div>
-        <div class="s_a_SLOT">
-          <img
-            src="https://idsb.tmgrup.com.tr/ly/uploads/images/2022/08/22/226382.jpg"
-            alt=""
-          />
-          <h1><a href=""> 10 Benfits of learning to code in early ages</a></h1>
-          <h3>August 20, 2022</h3>
-        </div>
+
+      <% for(let i=1; i <articlesData.length;i+=2) { %>
+
+            <div class="s_a_SLOT">
+                <img
+                  src=<%=articlesData[i].image_pathLocation %>
+                  alt=<%=articlesData[i].article_title %>
+                />
+                <h1><a href=""> <%=articlesData[i].article_title %></a></h1>
+                <h3 class="Art_date"> <%=articlesData[i].article_created_at %></h3>
+            </div>
+        <% } %> 
+
       </div>
     </section>
 
@@ -98,130 +82,58 @@
     <div class="sec__title">
       <h1>RECENT</h1>
     </div>
+
     <div class="Rec__articlesWrp">
       <div class="recent__artContainer">
-        <article>
-          <div class="img_wpr">
-            <a href="">
-              <img
-                src="https://idsb.tmgrup.com.tr/ly/uploads/images/2022/08/22/226382.jpg"
-                alt=""
-              />
-            </a>
-          </div>
+          <% for(let i=1; i <articlesData.length;i++) { %>
+              <article>
+                <div class="img_wpr">
+                  <a href="">
+                    <img
+                      src=<%=articlesData[i].image_pathLocation  %>
+                      alt=<%=articlesData[i].article_title  %>
+                    />
+                  </a>
+                </div>
 
-          <div class="art__detailsC">
-            <div class="articleDATA">
-              <img src="./images/Untitled-1.png" alt="" />
-              <span>BACK-END</span>
-              <p>MAY ,12 2022</p>
-            </div>
+                <div class="art__detailsC">
+                  <div class="articleDATA">
+                    <img src=<%=articlesData[i].admin_img_path  %> ="admin_img" />
+                    <span><%=articlesData[i].tag_name %></span>
+                    <p class="Art_date"><%=articlesData[i].article_created_at  %></p>
+                  </div>
 
-            <h1>
-              <a href=""
-                >10 Benfits of starting to learn Programming in early age</a
-              >
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elitamet
-              consectetur adipisicing elitLaboriosam, odio....
-            </p>
-            <a href="#">
-            <i class="fa-solid fa-ellipsis"></i>
-           </a>
-          </div>
-        </article>
-
-        <article>
-          <div class="img_wpr">
-            <a href="">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVtNsWM2Fx7ejIlfuxmsKeHjTBAlFalc00wA&usqp=CAU"
-                alt=""
-              />
-            </a>
-          </div>
-
-          <div class="art__detailsC">
-            <div class="articleDATA">
-              <img src="./images/yssin.jpg" alt="" />
-              <span>BACK-END</span>
-              <p>MAY ,12 2022</p>
-            </div>
-
-            <h1>
-              <a href=""
-                >10 Benfits of starting to learn Programming in early age</a
-              >
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elitamet
-              consectetur adipisicing elitLaboriosam, odio....
-            </p>
-            <a href="#">
-            <i class="fa-solid fa-ellipsis"></i>
-           </a>
-        </article>
-
-        <article>
-          <div class="img_wpr">
-            <a href="">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXTDUbCyzygSY9spjmOUWAt9wxuLHqzeZN-g&usqp=CAU"
-                alt=""
-              />
-            </a>
-          </div>
-
-          <div class="art__detailsC">
-            <div class="articleDATA">
-              <img src="./images/zyd_inn.jpg" alt="" />
-              <span>BACK-END</span>
-              <p>MAY ,12 2022</p>
-            </div>
-
-            <h1>
-              <a href=""
-                >10 Benfits of starting to learn Programming in early age</a
-              >
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elitamet
-              consectetur adipisicing elitLaboriosam, odio....
-            </p>
-           <a href="#">
-            <i class="fa-solid fa-ellipsis"></i>
-           </a>
-          </div>
-        </article>
-
-        <!-- * LOAD MORE BTN -->
-        <button>Load more</button>
+                  <h1>
+                    <a href=""
+                      ><%=articlesData[i].article_title  %></a
+                    >
+                  </h1>
+                  <p class="article_desc">
+                    <%=articlesData[i].article_description  %>
+                  </p>
+                  <a href="#">
+                  <i class="fa-solid fa-ellipsis"></i>
+                </a>
+                </div>
+              </article>
+          <% } %> 
       </div>
       <!-- ::://// -->
       <div class="tagsContiner">
-  <h3>Tag Cloud</h3>
-          <hr />
-
+           <h3>Tag Cloud</h3>
+            <hr />
           <div class="content-tags">
-            <button>#JavaScript</button>
-            <button>#ReactJs</button>
-            <button>#PHP</button>
-            <button>#NodeJS</button>
-            <button>#MERN STACK</button>
-            <button>#Insperation</button>
-            <button>#TIPS</button>
-            <button>#Self-taught</button>
-            <button>#Build-project</button>
-            <button>#Road Map</button>
-            <button>#Motivation</button>
-            <button>#Books</button>
+            <% for(let i=0; i <articlesData.length;i++) { %>
+            <button>
+              <%=articlesData[i].tag_name %>
+            </button>
+          <% } %> 
           </div>
       </div>
     </div>
     <!--!-------------------------------Sub_container----------------------->
- <div class="Sub_container">
-      <img src="./public/images/undraw_mailbox_re_dvds.svg" alt="" />
+  <div class="Sub_container">
+      <img src="/images/undraw_mailbox_re_dvds.svg" alt="" />
       <h1>TechJoy</h1>
       <p>
         Hello, We're content writer/Programmers who are fascinated by
@@ -230,10 +142,12 @@
       </p>
         
       <h3>Join our news letter !!</h3>
-      <div class="sub_wrpper">
-        <input type="email" placeholder="Email-adress" />
-        <button>subscribe</button>
-      </div>
+      <form action="ty" method="post">
+        <div class="sub_wrpper">
+          <input type="email" placeholder="Email-adress" name="sub_usrEmail_feedpg" required/>
+          <button type="submit">subscribe</button>
+        </div>
+      </form>
     </div> 
     <!--!-------------------------------footer----------------------->
     <%- include('./footer'); -%>

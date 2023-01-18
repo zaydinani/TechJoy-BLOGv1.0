@@ -44,7 +44,6 @@ nav > span {
   color: azure;
   position: relative;
   cursor: pointer;
-  display: none;
 }
 nav > span::after {
   content: "";

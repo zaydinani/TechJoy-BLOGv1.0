@@ -6,36 +6,30 @@
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
   color: white;
-  display: none;
   height: 100%;
   padding: 25px;
 }
-.analytics{
-  background-color: green;
+.subscribers {
   height: 100%;
   width: 100%;
   color: white;
-  display: none;
 }
-.users{
-  display: none;
+.users {
   width: 100%;
   height: 100%;
 }
-.users-articles{
-  display: none;
+.users-articles {
   width: 100%;
   height: 100%;
-} 
-.app-content{
+}
+.app-content {
   width: 100%;
   height: 100%;
   padding: 25px;
-  display: none;
 }
 :root {
   --app-bg: #101827;
-  --sidebar: rgba(21, 30, 47,1);
+  --sidebar: rgba(21, 30, 47, 1);
   --sidebar-main-color: #fff;
   --table-border: #1a2131;
   --table-header: #1a2131;
@@ -47,7 +41,8 @@
   --action-color-hover: #6291fd;
   --app-content-secondary-color: #1d283c;
   --filter-reset: #2c394f;
-  --filter-shadow: rgba(16, 24, 39, 0.8) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  --filter-shadow: rgba(16, 24, 39, 0.8) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .light:root {
@@ -62,7 +57,8 @@
   --filter-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -171,7 +167,7 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .account-info-name {
   font-size: 14px;
@@ -221,7 +217,7 @@ body {
   transition: 0.2s;
   cursor: pointer;
 }
-.delete{
+.delete {
   background-color: red;
   color: #fff;
   font-size: 14px;
@@ -232,8 +228,9 @@ body {
   padding: 0 16px;
   transition: 0.2s;
   cursor: pointer;
+  text-decoration: none;
 }
-.delete:hover{
+.delete:hover {
   background-color: #990000;
 }
 .app-content-headerButton:hover {
@@ -315,7 +312,8 @@ body {
 .action-button:hover {
   border-color: var(--action-color-hover);
 }
-.action-button:focus, .action-button.active {
+.action-button:focus,
+.action-button.active {
   outline: none;
   color: var(--action-color);
   border-color: var(--action-color);
@@ -364,8 +362,8 @@ body {
 }
 .filter-menu select {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   padding: 8px 24px 8px 8px;
@@ -387,7 +385,8 @@ body {
 .filter-menu select:hover {
   border-color: var(--action-color-hover);
 }
-.filter-menu select:focus, .filter-menu select.active {
+.filter-menu select:focus,
+.filter-menu select.active {
   outline: none;
   color: var(--action-color);
   border-color: var(--action-color);
@@ -468,10 +467,12 @@ body {
   }
 }
 @media screen and (max-width: 520px) {
-  .tableView .product-cell.admin, .tableView .product-cell.date {
+  .tableView .product-cell.admin,
+  .tableView .product-cell.date {
     display: none;
   }
-  .tableView .product-cell.stock, .tableView .product-cell.price {
+  .tableView .product-cell.stock,
+  .tableView .product-cell.price {
     flex: 0.2;
   }
 }
@@ -587,7 +588,7 @@ body {
   width: 100%;
   height: 140px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 4px;
   margin-bottom: 16px;
 }
@@ -596,30 +597,30 @@ body {
 }
 /*! animations */
 .slide-in-top {
-	-webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
- @-webkit-keyframes slide-in-top {
+@-webkit-keyframes slide-in-top {
   0% {
     -webkit-transform: translateY(-1000px);
-            transform: translateY(-1000px);
+    transform: translateY(-1000px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
 @keyframes slide-in-top {
   0% {
     -webkit-transform: translateY(-1000px);
-            transform: translateY(-1000px);
+    transform: translateY(-1000px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }

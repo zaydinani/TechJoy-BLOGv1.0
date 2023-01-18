@@ -28,3 +28,13 @@ recent.addEventListener("click", () => {
   console.log("first");
   recentView.scrollIntoView(true);
 });
+const articleDate = document.querySelectorAll(".Art_date");
+articleDate.forEach((art) => {
+  art.innerHTML = art.innerHTML.slice(0, 15);
+});
+
+const art_des = document.querySelectorAll(".article_desc");
+art_des.forEach((artDES) => {
+  console.log(artDES.innerHTML);
+  artDES.innerHTML = artDES.innerHTML.trim().slice(0, 130).concat("...");
+});

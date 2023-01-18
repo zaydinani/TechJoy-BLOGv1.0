@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/CreatArt.css" />
+    <!-- //*Footer  -->
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <!-- //*Font awsome  -->
+    <script
+      src="https://kit.fontawesome.com/53405766b0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/x-icon" href="./images/icons8-read-96.png" />
+
+    <title>Create new article</title>
+  </head>
+  <body>
+    <%- include('./nav'); -%>
+
+    <img src="images/artImg.svg" alt="" />
+    <div class="container">
+      <h1>CREATE NEW ARTICLE</h1>
+      <form action="">
+        <label for="auth">Auther_id</label>
+        <select name="auth_id" id="auth_id" name="auth">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <label for="img">Select image :</label>
+        <input type="file" id="img" name="img" accept="image/*" />
+        <label for="title">Enter Title :</label>
+        <input type="text" name="title" placeholder="title..." />
+        <label for="ArtHook"> article hook :</label>
+        <textarea
+          name="ArtHook"
+          id="ArtHook"
+          name="ArtHook"
+          placeholder="type here ..."
+        ></textarea>
+        <label for="ArtBody"> article body :</label>
+        <textarea
+          name="ArtBody"
+          id="ArtBody"
+          name="ArtBody"
+          placeholder="type here ..."
+        ></textarea>
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+    <%- include('./footer'); -%>
+    <script>
+      // DROP DOWN MENU
+      const myAccBtn = document.querySelector("nav > span");
+      const dropMenu = document.querySelector(".dropdown_menu");
+      if (myAccBtn)
+        myAccBtn.addEventListener("click", () => {
+          dropMenu.classList.toggle("dropdown_Active");
+        });
+    </script>
+  </body>
+</html>

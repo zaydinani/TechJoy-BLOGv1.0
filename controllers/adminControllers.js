@@ -3,6 +3,14 @@ const subscribers = require("../models/subscribers");
 const users = require("../models/user");
 const DB = require("../utils/database");
 
+// get route for Create new Article
+
+exports.getNewArticle = (req, res) => {
+  res.render("new-article", {
+    isLoggedIn: req.session.isLoggedIn,
+  });
+};
+
 /*get articles data */
 exports.getArticles = (req, res, next) => {
   dash

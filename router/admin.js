@@ -8,6 +8,9 @@ const dash = require("../models/dash");
 const router = express.Router();
 
 //! dashboard ROUTES
+
+// Create new articles router for dashboard
+router.get("/newArticle", blogController.getNewArticle);
 // articles router for dashboard
 router.get("/dash", blogController.getArticles);
 // subscribers router for dashboard

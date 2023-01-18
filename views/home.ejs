@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./images/icons8-read-96.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+    <!-- //*Font awsome  -->
+    <script
+      src="https://kit.fontawesome.com/53405766b0.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- //*leafle  -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
+
+    <!-- //*Footer  -->
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <title>TechJoy</title>
+  </head>
+  <body>
+    <%- include('./nav'); -%>
+
+    <!-- Hero_section AKA main 😁😁😁 -->
+    <section id="hero_sec">
+      <img src="./images/nv_sh.svg" alt="shpe01" />
+
+      <div class="heroS_actionSide">
+        <h1>TechJoy</h1>
+        <p>
+          We specialize in Web Development and project rescue. We're a team of
+          dedicated developers problem-solvers and technology experts who excel
+          at helping companies when they face crucial issues.
+        </p>
+        <div class="heroS_btnContainer">
+          <button id="toContact"><a href="./contact">contact us</a></button>
+          <button id="toQA"><a href="./FAQ">learn more</a></button>
+        </div>
+      </div>
+
+      <div class="heroS_vector">
+        <img src="./images/undraw_pair_programming_re_or4x.svg" alt="" />
+      </div>
+    </section>
+
+    <!-- //***** MEET US  -->
+
+    <div class="meetUS_sec">
+      <div class="sec__title">
+        <h1>Meet us</h1>
+      </div>
+
+      <!-- //* Person Container -->
+      <div class="Person_Slot">
+        <div class="person_phot">
+          <img src="./images/Untitled-1.png" alt="Founder" />
+        </div>
+        <div class="person_info">
+          <h1>Meet Mohammed Marsou</h1>
+          <h2>Full Stack Devoloper</h2>
+          <p>
+            Hey there, my name's Mohamed and I'm from Tangier, Morocco, I have a
+            Bachelor's degree in computer science, and for the last couple of
+            years, I have built so many Projects and am very excited to share my
+            coding journey with You.
+          </p>
+          <p>
+            Learning to code and make software is a long road and is always
+            challenging for everyone, and I'd like to share with you what helped
+            me to make it throw.
+          </p>
+
+          <h3>I work with</h3>
+          <div class="per__lang">
+            <span>HTML5,</span>
+            <span>CSS3,</span>
+            <span>SASS,</span>
+            <span>JavaScript,</span>
+            <span>Python,</span>
+
+            <span>BOOTSTRAP,</span>
+            <span>Node js,</span>
+            <span>Express,</span>
+
+            <span>MYSQL,</span>
+            <span>MongoDB...</span>
+          </div>
+
+          <div class="per__links">
+            <a href="#"><i class="fa-solid fa-link"></i></a>
+            <a href="https://github.com/Mohamed-Marsou">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://twitter.com/mohammed_marsou">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/mohamed_taoufik_marsou/">
+              <i class="fa-brands fa-square-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100084199696274">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- //* Person Container -->
+      <div class="Person_Slot z_container">
+        <div class="person_info">
+          <h1>Meet Zayd Inani</h1>
+          <h2>Full Stack Devoloper</h2>
+          <p>
+            Hello, I'm Zayd Inani 23 years old from Morocco, I'm a self taught
+            full stack developer, English literature graduate and co founder of
+            this website ,you can check more of my work in my portofolio .
+          </p>
+          <p>
+            I'm super passionate in learning new technologies and very versatile
+            in my work, so if you need help in building a new website for your
+            business or you want someone to update your website with new
+            features kindly contact us with more info.
+          </p>
+
+          <h3>I work with</h3>
+          <div class="per__lang">
+            <span>HTML5,</span>
+            <span>CSS3,</span>
+            <span>JavaScript,</span>
+            <span>C,</span>
+
+            <span>BOOTSTRAP,</span>
+            <span>Node js,</span>
+            <span>Express,</span>
+
+            <span>MYSQL...</span>
+          </div>
+
+          <div class="per__links">
+            <a href="#"><i class="fa-solid fa-link"></i></a>
+
+            <a href="https://github.com/zaydinani">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://twitter.com/InaniZayd">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/zayd_inani/">
+              <i class="fa-brands fa-square-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/zayd-inani-a23161248/">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="person_phot">
+          <img src="./images/zyd_inn.jpg" alt="Founder" />
+        </div>
+      </div>
+
+      <!-- //* Person Container -->
+      <div class="Person_Slot">
+        <div class="person_phot">
+          <img src="./images/yssin.jpg" alt="Founder" />
+        </div>
+        <div class="person_info">
+          <h1>Meet Yassine EL bekkari</h1>
+          <h2>Back end Devoloper</h2>
+          <p>
+            Hello everyone my name's El bekkari Yassine, I'm 23 years old, and I
+            live in Tangier, Morocco. I am a developer, I studied Python as an
+            introduction to programming and I have been in love with it since
+            then.
+          </p>
+          <p>
+            Developing software and solving difficult problems is what makes me
+            go out of bed, I'm always looking for learning more languages&Tools
+            and gaining new experiences.
+          </p>
+
+          <h3>I work with</h3>
+          <div class="per__lang">
+            <span>HTML5,</span>
+            <span>CSS3,</span>
+            <span>BOOTSTRAP,</span>
+            <span>JavaScript,</span>
+
+            <span>Python,</span>
+            <span>Java,</span>
+            <span>Php,</span>
+
+            <span>MYSQL...</span>
+          </div>
+
+          <!-- <div class="per__links">
+            <a href="#">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-square-instagram"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-linkedin"></i>
+            </a> 
+          </div>-->
+        </div>
+      </div>
+    </div>
+
+    <!-- //***** Articles Section  -->
+    <div class="Arts_sec">
+      <div class="sec__title">
+        <h1>CHECK OUT</h1>
+      </div>
+      <div class="articles_wrapper">
+        <article>
+          <img
+            src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/WP3TTg5jDHTfXskQy36agDS8"
+            alt=""
+          />
+          <div class="metData">
+            <div class="poster_pic">
+              <img src="./images/zyd_inn.jpg" alt="" />
+            </div>
+
+            <span id="TAG">JavaScript</span>
+            <p>August 20, 2022</p>
+          </div>
+
+          <h1><a href="">JavaScript Roadmap for absolutes 2022</a></h1>
+        </article>
+
+        <article>
+          <img
+            src="https://s7280.pcdn.co/wp-content/uploads/2016/06/database-blue.png"
+            alt=""
+          />
+
+          <div class="metData">
+            <div class="poster_pic">
+              <img src="./images/yssin.jpg" alt="" />
+            </div>
+
+            <span id="TAG">JavaScript</span>
+            <p>August 10, 2022</p>
+          </div>
+
+          <h1><a href="">When should I start learning DATABASES</a></h1>
+        </article>
+
+        <article>
+          <img
+            src="https://miro.medium.com/max/1400/1*CH9zWYSU4XZudQ4CQDWafA.jpeg"
+            alt=""
+          />
+
+          <div class="metData">
+            <div class="poster_pic">
+              <img src="./images/Untitled-1.png" alt="" />
+            </div>
+
+            <span id="TAG">JavaScript</span>
+            <p>August 20, 2022</p>
+          </div>
+
+          <h1>
+            <a href=""
+              >Why I heard that All Progrommers are self-taught even with a
+              dgree
+            </a>
+          </h1>
+        </article>
+      </div>
+    </div>
+
+    <!-- //***** contactUS Section  -->
+    <section id="contactUS">
+      <div class="sec__title">
+        <h1>Contact us</h1>
+      </div>
+      <div id="map"></div>
+
+      <div class="contactUs__form">
+        <form>
+          <div class="name_eml">
+            <input
+              type="text"
+              name="contactor"
+              id="contactor_name"
+              placeholder="Name"
+              required
+            />
+            <input
+              type="email"
+              name="contactor_eml"
+              id="email"
+              placeholder=" Email"
+              required
+            />
+          </div>
+
+          <input
+            type="text"
+            name="contactor_sub"
+            id="contactor_sub"
+            placeholder="Subject"
+            required
+          />
+          <textarea
+            name="contactor_msg"
+            id="contactor_msg"
+            cols="30"
+            rows="10"
+            placeholder="Your message"
+          ></textarea>
+
+          <button>
+            <span>SEND</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section id="sub__newsSheet">
+      <div class="sub__container">
+        <img src="./images/undraw_confidential_letter_w6ux.svg" alt="draw" />
+        <p>
+          Subscribe to our newsletter in order to not miss any new arrivals
+          articles in our Blog.
+        </p>
+
+        <div class="sub__btn_wrapper">
+          <input
+            type="email"
+            name="email"
+            id="sub_email"
+            placeholder="Email-adress"
+          />
+          <button>Subscribe</button>
+        </div>
+      </div>
+    </section>
+    <%- include('./footer'); -%>
+    <script src="./JavaScript/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgb(180, 184, 181);
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+nav {
+  width: 100%;
+  height: 4.5rem;
+  background-color: rgb(25, 164, 164);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav > a {
+  color: azure;
+  text-decoration: underline;
+}
+nav > span {
+  color: azure;
+  position: relative;
+  cursor: pointer;
+  display: none;
+}
+nav > span::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background-color: azure;
+  width: 8px;
+  height: 6px;
+  -webkit-clip-path: polygon(100% 0, 0 0, 52% 100%);
+  clip-path: polygon(100% 0, 0 0, 52% 100%);
+}
+nav > span .dropdown_menu {
+  min-width: 9rem;
+  min-height: 7rem;
+  position: absolute;
+  right: -2.5rem;
+  bottom: -8.4rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 15;
+  overflow: hidden;
+  background-color: rgb(25, 164, 164);
+  display: none;
+}
+nav > span .dropdown_menu > div {
+  color: rgb(255, 255, 255);
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: "Cairo", sans-serif;
+  padding: 10px;
+  transition: 0.4s ease-in;
+}
+nav > span .dropdown_menu > div:hover {
+  color: rgb(4, 244, 176);
+}
+nav > span .dropdown_menu > div i {
+  padding: 10px 10px 10px 0;
+  font-size: 1.1rem;
+}
+nav > span .dropdown_menu > div > button {
+  text-transform: uppercase;
+}
+nav > h1 > a {
+  color: azure;
+  font-family: "Righteous", cursive;
+  font-size: 2.2rem;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 50%;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+nav ul a {
+  color: azure;
+}
+nav .hamContainer {
+  width: 3.2em;
+  height: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  cursor: pointer;
+  display: none;
+}
+nav .hamContainer > div {
+  width: 80%;
+  height: 4px;
+  background-color: azure;
+  border-radius: 5px;
+  transition: 0.5s ease;
+}
+nav .hamContainer .line2 {
+  width: 60%;
+  margin-left: 5px;
+}
+
+.dropdown_Active {
+  display: block !important;
+}
+
+@-webkit-keyframes navAnimationLinks {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes navAnimationLinks {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@media screen and (max-width: 768px) {
+  nav {
+    position: relative;
+    justify-content: space-around;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.161);
+  }
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 4.5rem;
+    width: 100vw;
+    height: 88.4vh;
+    background-color: rgb(25, 164, 164);
+    transform: translateX(100vw);
+    z-index: 5;
+  }
+  nav ul li {
+    opacity: 0;
+  }
+  nav ul a {
+    color: azure;
+  }
+  nav .hamContainer {
+    width: 3.2em;
+    height: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    cursor: pointer;
+    display: flex;
+  }
+  nav .hamContainer > div {
+    width: 80%;
+    height: 4px;
+    background-color: azure;
+    border-radius: 5px;
+  }
+  nav .hamContainer .line2 {
+    width: 60%;
+    margin-left: 5px;
+  }
+  nav .activeHam .line2 {
+    display: none;
+  }
+  nav .activeHam .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  nav .activeHam .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+:root {
+  --main: #fff;
+  --secondary: rgb(25, 164, 164);
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  background-color: var(--main);
+}
+/* top picture and its content*/
+.question-picture {
+  position: relative;
+  font-size: xx-large;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.question-picture img {
+  width: 40%;
+  min-height: 60vh;
+}
+.image-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  margin-left: 2rem;
+}
+.image-content-container h1 {
+  font-family: righteous;
+  display: inline;
+  margin: 1rem;
+}
+.image-content-container span {
+  color: rgb(25, 164, 164);
+}
+
+/* questions*/
+.container {
+  margin: 0 auto;
+  padding: 4rem;
+  max-width: 55rem !important;
+}
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+.accordion .accordion-item button[aria-expanded="true"] {
+  border-bottom: 1px solid rgb(25, 164, 164);
+}
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #7288a2;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color: var(--secondary);
+}
+.accordion button:hover::after,
+.accordion button:focus::after {
+  cursor: pointer;
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+}
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.accordion button[aria-expanded="true"] {
+  color: var(--secondary);
+}
+.accordion button[aria-expanded="true"] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded="true"] + .accordion-content {
+  opacity: 1;
+  max-height: 20em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
+}
+
+.contact {
+  max-width: 60%;
+  height: 6rem;
+  margin: 0 auto;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 25px;
+  background-color: rgb(25, 164, 164);
+  color: white;
+  margin-bottom: 20px;
+}
+.contact > p {
+  width: 50%;
+  text-align: center;
+}
+.btn {
+  height: 35px;
+  width: 150px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 25px;
+  margin: 15px;
+  cursor: pointer;
+  transition: 0.5s;
+  color: black;
+  background-color: rgb(25, 164, 164);
+  border: 2px solid rgb(255, 255, 255);
+}
+.btn a {
+  color: azure;
+}
+.btn:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 1200px) {
+  .question-picture img {
+    width: 50%;
+    min-height: 50vh;
+  }
+  .contact {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .question-picture img {
+    width: 40%;
+    min-height: 30vh;
+  }
+}
+@media screen and (max-width: 700px) {
+  .question-picture img {
+    display: none;
+  }
+  .image-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 2rem;
+  }
+}
+@media screen and (max-width: 436px) {
+  .contact {
+    flex-direction: column;
+    height: fit-content;
+    width: 80%;
+    padding: 0px;
+  }
+}

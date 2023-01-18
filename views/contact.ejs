@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- //*Footer  -->
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/contactus.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/icons8-read-96.png"
+      type="image/x-icon"
+    />
+    <title>TECHJOY</title>
+  </head>
+  <body>
+    <%- include('./nav'); -%>
+
+    <h1 class="page-header">contact us</h1>
+    <div class="first-page-container">
+      <div class="contact-info-container">
+        <div class="title">
+          <h1>don't hesitate</h1>
+          <p>
+            fill up the form and our team will get back to you within 24 hours
+          </p>
+        </div>
+        <div class="contact-info">
+          <div class="info-card">
+            <i class="fa-sharp fa-solid fa-phone"></i>
+            <p>+212 615 975 762</p>
+          </div>
+          <div class="info-card">
+            <i class="fa-solid fa-envelopes-bulk"></i>
+            <p>zaydinani@protonmail.com</p>
+          </div>
+          <div class="info-card">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Tangier , Maroccor</p>
+          </div>
+        </div>
+        <div class="social-icons">
+          <i class="fa-brands fa-facebook-f fa-xl"></i>
+          <i class="fa-brands fa-twitter fa-xl"></i>
+          <i class="fa-brands fa-instagram fa-xl"></i>
+        </div>
+      </div>
+      <div class="form-container">
+        <form>
+          <div class="form">
+            <input
+              type="text"
+              id="name"
+              class="form__input"
+              autocomplete="off"
+              placeholder=" "
+            />
+            <label for="name" class="form__label">your name</label>
+          </div>
+          <div class="form">
+            <input
+              type="text"
+              id="email"
+              class="form__input"
+              autocomplete="off"
+              placeholder=" "
+            />
+            <label for="email" class="form__label">Email</label>
+          </div>
+          <div class="form-text">
+            <textarea
+              id="story"
+              name="story"
+              rows="5"
+              cols="33"
+              class="form__area"
+              autocomplete="off"
+              placeholder=" "
+            ></textarea>
+            <label for="message" class="form__label">message</label>
+          </div>
+          <div class="btn">
+            <button>send message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="second-page-container">
+      <div class="second-title">
+        <h1>Having trouble ?</h1>
+        <p>we might've already answered your question before ,check our Q&A</p>
+      </div>
+      <div class="card-container">
+        <a href="FAQ" class="data-card">
+          <i class="fa-solid fa-quote-left"></i>
+          <h4>Can I quote from articles ?</h4>
+          <p>our answers here</p>
+          <span class="link-text">
+            check full answers
+            <svg
+              width="25"
+              height="16"
+              viewBox="0 0 25 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z"
+                fill="#6871da"
+              />
+            </svg>
+          </span>
+        </a>
+        <a href="FAQ" class="data-card">
+          <i class="fa-solid fa-quote-left"></i>
+          <h4>WHo is Techjoy stuff?</h4>
+          <p>our answers here</p>
+          <span class="link-text">
+            check full answers
+            <svg
+              width="25"
+              height="16"
+              viewBox="0 0 25 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z"
+                fill="#6871da"
+              />
+            </svg>
+          </span>
+        </a>
+        <a href="FAQ" class="data-card">
+          <i class="fa-solid fa-quote-left"></i>
+          <h4>looking to join us?</h4>
+          <p>our answers here</p>
+          <span class="link-text">
+            check full answers
+            <svg
+              width="25"
+              height="16"
+              viewBox="0 0 25 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z"
+                fill="#6871da"
+              />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+    <%- include('./footer'); -%>
+
+    <script defer src="./JavaScript/blogFeed.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a5df376e05.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

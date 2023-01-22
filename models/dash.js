@@ -11,9 +11,12 @@ module.exports = class dash {
         article_title,  
         image_pathLocation,  
         article_created_at
-      FROM blog_admins
-      JOIN blog_articles
-      ON blog_admins.admin_id = blog_articles.author_id
+        FROM blog_admins
+        JOIN blog_articles
+        ON blog_admins.admin_id = blog_articles.author_id  
+        GROUP BY article_id 
+        ORDER BY article_id
+        DESC
       `
     );
   }

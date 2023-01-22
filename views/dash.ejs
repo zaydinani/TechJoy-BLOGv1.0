@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>TechJoy ||Admin</title>
+    <title>TechJoy || Admin</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
@@ -115,49 +115,13 @@
               <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
             </svg>
           </button>
-          <form action="/newArticle" method="post">
-            <button class="app-content-headerButton" type="submit">
-              Add article
-            </button>
-          </form>
+          <a class="app-content-headerButton" href="new-article">
+            Add article
+          </a>
         </div>
         <div class="app-content-actions">
           <input class="search-bar" placeholder="Search..." type="text" />
           <div class="app-content-actions-wrapper">
-            <div class="filter-button-wrapper">
-              <button class="action-button filter jsFilter">
-                <span>Filter</span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-filter"
-                >
-                  <polygon
-                    points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"
-                  />
-                </svg>
-              </button>
-              <div class="filter-menu">
-                <label>Admins</label>
-                <select>
-                  <option>All admins</option>
-                  <option>Zayd inani</option>
-                  <option>Yassin bakari</option>
-                  <option>Mohammed Taoufik Marsou</option>
-                </select>
-                <div class="filter-menu-buttons">
-                  <button class="filter-button reset">Reset</button>
-                  <button class="filter-button apply">Apply</button>
-                </div>
-              </div>
-            </div>
             <button class="action-button list active" title="List View">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -210,32 +174,43 @@
           </div>
           <% for(let i = 0; i < articles.length ; i++) { %>
           <!-- //* row start here -->
-          <div class="products-row">
-            <div class="product-cell image">
-              <!-- prettier-ignore -->
-              <img src=<%= articles[i].image_pathLocation %>
-              <span><%=articles[i].article_title %></span>
+
+          <a href="checkArticle/<%=articles[i].article_id%>">
+            <div class="products-row">
+              <div class="product-cell image">
+                <!-- prettier-ignore -->
+                <img src=<%= articles[i].image_pathLocation %> >
+                <span><%=articles[i].article_title %></span>
+              </div>
+              <div class="product-cell admin">
+                <span class="cell-label">admin:</span
+                ><%=articles[i].admin_username%>
+              </div>
+              <div class="product-cell date">
+                <span class="cell-label">date-published:</span
+                ><%=articles[i].article_created_at.toLocaleDateString('en-US', {
+                month: 'long', day: 'numeric', year: 'numeric' }) %>
+              </div>
+              <div class="product-cell">
+                <form
+                  action="/admin/edit/article/<%=articles[i].article_id%>"
+                  method="get"
+                >
+                  <button class="app-content-headerButton" type="submit">
+                    edit
+                  </button>
+                </form>
+              </div>
+              <div class="product-cell">
+                <form
+                  action="/admin/delete/article/<%=articles[i].article_id%>"
+                  method="get"
+                >
+                  <button class="delete" type="submit">delete</button>
+                </form>
+              </div>
             </div>
-            <div class="product-cell admin">
-              <span class="cell-label">admin:</span
-              ><%=articles[i].admin_username%>
-            </div>
-            <div class="product-cell date">
-              <span class="cell-label">date-published:</span
-              ><%=articles[i].article_created_at.toLocaleDateString('en-US', {
-              month: 'long', day: 'numeric', year: 'numeric' }) %>
-            </div>
-            <div class="product-cell">
-              <button class="app-content-headerButton">edit</button>
-            </div>
-            <div class="product-cell">
-              <a
-                class="delete"
-                href="/admin/delete/article/<%=articles[i].article_id%>"
-                >delete</a
-              >
-            </div>
-          </div>
+          </a>
           <!-- //* row end here -->
           <% } %>
         </div>

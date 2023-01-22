@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="article.css" />
+    <link rel="stylesheet" href="/css/article.css" />
     <!-- *google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,7 +12,17 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap"
       rel="stylesheet"
     />
-    <title>Article</title>
+    <!-- //*Footer  -->
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="/images/icons8-read-96.png"
+      type="image/x-icon"
+    />
+    <title><%= articleData[0].article_title%></title>
     <meta
       property="og:url"
       content="https://cdn-developer-wp.arc.dev/wp-content/uploads/2022/06/coding-programming-project-ideas-1128x635.jpg"
@@ -32,10 +42,11 @@
     <%- include('./nav'); -%>
 
     <div class="articleContainer">
-      <h6 id="pub_at">published at 22 Fub,2023</h6>
-      <h1 id="main_title">7 things u do makes u better software Enginner</h1>
+      <h6 id="pub_at">published at <%= articleData[0].article_created_at.toLocaleDateString('en-US', {
+                month: 'long', day: 'numeric', year: 'numeric' })%></h6>
+      <h1 id="main_title"><%= articleData[0].article_title%></h1>
       <h5 id="author">
-        This article written by <span id="authName">Mohammed Marsou</span>
+        This article written by <span id="authName">techJoy staff</span>
       </h5>
       <div class="shareBtns">
         <a
@@ -60,165 +71,63 @@
         </a>
         <i class="fa-brands fa-twitter"></i>
       </div>
-      <p id="tag">#Motivation</p>
-
-      <img
-        id="mainCover"
-        src="https://cdn-developer-wp.arc.dev/wp-content/uploads/2022/06/coding-programming-project-ideas-1128x635.jpg"
-        alt=""
-      />
-      <p id="descr">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, a. Error
-        voluptatibus aliquam laboriosam temporibus placeat excepturi consectetur
-        animi, esse nulla voluptatum dolores incidunt aliquid vel earum, illum
-        odit? Suscipit ducimus quibusdam, architecto beatae cupiditate possimus
-        ratione illo, alias modi amet molestiae rem pariatur rerum dolorum
-        doloremque! Ipsum reprehenderit veritatis ullam mollitia asperiores
-        totam, culpa quod. Esse aut obcaecati sapiente. voluptatibus aliquam
-        laboriosam temporibus placeat excepturi consectetur animi, esse nulla
-        voluptatum dolores incidunt aliquid vel earum, illum odit? Suscipit
-        ducimus quibusdam, architecto beatae cupiditate possimus ratione illo,
-        alias modi amet molestiae rem pariatur rerum dolorum doloremque! Ipsum
-        reprehenderit veritatis ullam mollitia asperiores totam, culpa quod.
-        Esse aut obcaecati sapiente.
-      </p>
+      <p id="tag">#<%= tagData[0].tag_name%></p>
+      <!-- prettier-ignore -->
+      <img src= /<%= articleData[0].image_pathLocation %> id="mainCover" />
+      <p id="descr"><%= articleData[0].article_description%></p>
 
       <div class="articlbody">
-        <h2 id="headin_1">#1 just spend more time on projects</h2>
-
-        <p id="desc_1">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eligendi
-          nesciunt iste beatae nulla quia ullam aliquam id perspiciatis
-          aspernatur hic minima error, autem officia vitae, omnis repellendus,
-          labore ab reprehenderit! Libero, non molestiae. Quia numquam omnis
-          accusamus blanditiis facere a rem soluta, enim amet id, officiis, iste
-          quasi. Nisi, dolorum rerum, suscipit vero doloremque cumque quae
-          voluptas eligendi, aspernatur saepe explicabo omnis nostrum incidunt
-          dolor sapiente soluta eaque doloribus officiis! Porro dolorem neque
-          nostrum, facilis, dolor sint quam voluptatem repellendus quae soluta
-          accusamus dicta delectus saepe. Nisi consequatur quas expedita qui
-          dolore aut dicta quam error cum? Amet, architecto. Temporibus,
-          similique! Tempore sequi, eligendi illo ipsa quisquam deleniti
-          architecto, neque laboriosam eum, dicta eos dolores a dolorem ullam
-          vitae commodi. Possimus nobis autem voluptatum perspiciatis et esse
-          consectetur impedit iusto neque totam dolorum eligendi sed, iure qui
-          aut debitis cupiditate ducimus veniam aspernatur animi unde! At culpa
-          assumenda laboriosam quisquam soluta magni necessitatibus rem dolores
-          ab veniam itaque non doloribus dicta, molestiae provident quo dolorem.
-          Velit mollitia esse quidem consequatur ipsa, earum asperiores, ad eum,
-          laudantium illum praesentium! Labore omnis laudantium unde molestiae
-          obcaecati ad necessitatibus consequuntur aperiam consectetur quasi
-          perspiciatis doloremque inventore saepe quas iste fugiat, at quisquam,
-          perferendis recusandae nisi cum quaerat. Maiores perferendis id, sequi
-          officiis odit soluta veritatis quae reiciendis unde distinctio
-          repellat! Officia cum excepturi qui ducimus dolor. Sequi vitae
-          laudantium dolorum esse similique, molestias, delectus, numquam
-          inventore vel aliquid pariatur tempore vero deserunt laboriosam totam
-          earum. Nisi officiis nihil quae voluptas optio ipsa provident, ab
-          quisquam aliquid! Reprehenderit!
-        </p>
-
-        <h2 id="headin_2">#2 make software enginners Friends</h2>
-        <p id="desc_2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eligendi
-          nesciunt iste beatae nulla quia ullam aliquam id perspiciatis
-          aspernatur hic minima error, autem officia vitae, omnis repellendus,
-          labore ab reprehenderit! Libero, non molestiae. Quia numquam omnis
-          accusamus blanditiis facere a rem soluta, enim amet id, officiis, iste
-          quasi. Nisi, dolorum rerum, suscipit vero doloremque cumque quae
-          voluptas eligendi, aspernatur saepe explicabo omnis nostrum incidunt
-          dolor sapiente soluta eaque doloribus officiis! Porro dolorem neque
-          nostrum, facilis, dolor sint quam voluptatem repellendus quae soluta
-          accusamus dicta delectus saepe. Nisi consequatur quas expedita qui
-          dolore aut dicta quam error cum? Amet, architecto. Temporibus,
-          similique! Tempore sequi, eligendi illo ipsa quisquam deleniti
-          architecto, neque laboriosam eum, dicta eos dolores a dolorem ullam as
-          optio ipsa provident, ab quisquam aliquid! Reprehenderit!
-        </p>
-
-        <h2 id="headin_3">#3 focus on learning basics before moving on fast</h2>
-        <p id="desc_3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eligendi
-          nesciunt iste beatae nulla quia ullam aliquam id perspiciatis
-          aspernatur hic minima error, autem officia vitae, omnis repellendus,
-          labore ab reprehenderit! Libero, non molestiae. Quia numquam omnis
-          accusamus blanditiis facere a rem soluta, enim amet id, officiis, iste
-          quasi. Nisi, dolorum rerum, suscipit vero doloremque cumque quae
-          voluptas eligendi, aspernatur saepe explicabo omnis nostrum incidunt
-          dolor sapiente soluta eaque doloribus officiis! Porro dolorem neque
-          nostrum, facilis, dolor sint quam voluptatem repellendus quae soluta
-          accusamus dicta delectus saepe. Nisi consequatur quas expedita qui
-          dolore aut dicta quam error cum? Amet, architecto. Temporibus,
-          similique! Tempore sequi, eligendi illo ipsa quisquam deleniti
-          architecto, neque laboriosam eum, dicta eos dolores a dolorem ullam as
-          quasi. Nisi, dolorum rerum, suscipit vero doloremque cumque quae
-          voluptas eligendi, aspernatur saepe explicabo omnis nostrum incidunt
-          dolor sapiente soluta eaque doloribus officiis! Porro dolorem neque
-          nostrum, facilis, dolor sint quam voluptatem repellendus quae soluta
-          accusamus dicta delectus saepe. Nisi consequatur quas expedita qui
-          dolore aut dicta quam error cum? Amet, architecto. Temporibus,
-          similique! Tempore sequi, eligendi illo ipsa quisquam deleniti
-          architecto, neque laboriosam eum, dicta eos dolores a dolorem ullam as
-          quasi. Nisi, dolorum rerum, suscipit vero doloremque cumque quae
-          voluptas eligendi, aspernatur saepe explicabo omnis nostrum incidunt
-          dolor sapiente soluta eaque doloribus officiis! Porro dolorem neque
-          nostrum, facilis, dolor sint quam voluptatem repellendus quae soluta
-          accusamus dicta delectus saepe. Nisi consequatur quas expedita qui
-          dolore aut dicta quam error cum? Amet, architecto. Temporibus,
-          similique! Tempore sequi, eligendi illo ipsa quisquam deleniti
-          architecto, neque laboriosam eum, dicta eos dolores a dolorem ullam as
-          optio ipsa provident, ab quisquam aliquid! Reprehenderit!
-        </p>
+        <p id="desc_1"><%= articleData[0].article_content%></p>
       </div>
 
       <div class="comments">
         <h2>LEAVE A COMMENT</h2>
-        <form action="#" method="post">
+        <form action="/ArticleComment/<%= articleData[0].article_id%>" method="post">
           <textarea
             name="comment"
             id="comment"
             placeholder="write your thoughts..."
+            required
           ></textarea>
           <button type="submit">submit</button>
+          
         </form>
-
-        <div class="comment_slot">
-          <div class="user_data">
-            <img
-              src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
-              alt=""
-            />
-            <h4 class="usrName">Loco with no moco</h4>
-            <span class="datespam">22 Fub 2023</span>
+        <%if (!user) {%>
+          <hr style="margin:20px 0px"/>
+          <h5 style="color: #555;padding: 20px 40px;">Be the first one to comment</h5>
+              <%}else {%>
+                <% for(let i=0; i <comments.length;i++) { %>
+                <div class="comment_slot">
+                  
+                  <div class="user_data">
+                    <img
+                    src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+                    alt=""
+                    />
+                <% for(let i=0; i <user.length;i++) { %>
+                  <h4 class="usrName"><%=user[i].user_name%></h4>
+                  <%}%>
+                  <span class="datespam"><%= articleData[0].article_created_at.toLocaleDateString('en-US', {
+                    month: 'long', day: 'numeric', year: 'numeric' })%></span>
+            </div>
+            <p class="commentContent">
+              <%=comments[i].comment_content%>
+            </p>
           </div>
-          <p class="commentContent">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Repellendus beatae velit aliquam laboriosam dicta expedita, autem,
-            commodi animi iste ut sint.
-          </p>
-        </div>
-
-        <div class="comment_slot">
-          <div class="user_data">
-            <img
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
-              alt=""
-            />
-            <h4 class="usrName">Alexeander the great</h4>
-            <span class="datespam">22 Fub 2023</span>
-          </div>
-          <p class="commentContent">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Repellendus beatae velit aliquam laboriosam dicta expedita, autem,
-            commodi animi iste ut sint. Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Repellendus beatae velit aliquam laboriosam dicta
-            expedita, autem, commodi animi iste ut sint.
-          </p>
-        </div>
+          <%}%>
+        <%}%>
       </div>
     </div>
     <%- include('./footer'); -%>
-
+    <script>
+      // DROP DOWN MENU
+      const myAccBtn = document.querySelector("nav > span");
+      const dropMenu = document.querySelector(".dropdown_menu");
+      if (myAccBtn)
+        myAccBtn.addEventListener("click", () => {
+          dropMenu.classList.toggle("dropdown_Active");
+        });
+    </script>
     <script
       src="https://kit.fontawesome.com/53405766b0.js"
       crossorigin="anonymous"

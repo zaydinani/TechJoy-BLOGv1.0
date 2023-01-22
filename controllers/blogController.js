@@ -76,6 +76,19 @@ function formatDate(date) {
     ].join(":")
   );
 }
+// Adding New  Comment
+exports.postComment = (req, res, next) => {
+  const userId = req.session.userId;
+  let artId = req.params;
+  const artContent = req.body.comment;
+  DB.execute(
+    `INSERT INTO blog_comments (user_id, article_id, comment_content, comment_created_at) VALUES (${userId},${
+      artId.userId
+    },"${artContent}","${datetime.slice(0, 10)}")`
+  )
+    .then(res.redirect("back"))
+    .catch((err) => console.log(err));
+};
 // log out Controller
 exports.postLogout = (req, res, next) => {
   req.session.destroy(() => {
@@ -92,6 +105,7 @@ exports.postLogin = (req, res, next) => {
       bcrypt.compare(req.body.password, user_password, function (err, result) {
         if (result) {
           req.session.isLoggedIn = true;
+          req.session.userId = user_id;
           res.redirect("/");
         } else {
           res.render("login", {
@@ -210,11 +224,15 @@ exports.postThankPage = (req, res, next) => {
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
-      res.render("errorPage");
+      res.render("errorPage", {
+        isLoggedIn: req.session.isLoggedIn,
+      });
       return;
     } else {
       console.log("Email sent: " + info.response);
-      res.render("sub_thk");
+      res.render("sub_thk", {
+        isLoggedIn: req.session.isLoggedIn,
+      });
     }
   });
 };
@@ -251,11 +269,15 @@ exports.postContactPage = (req, res, next) => {
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
-      res.render("errorPage");
+      res.render("errorPage", {
+        isLoggedIn: req.session.isLoggedIn,
+      });
       return;
     } else {
       console.log("Email sent: " + info.response);
-      res.render("sub_thk");
+      res.render("sub_thk", {
+        isLoggedIn: req.session.isLoggedIn,
+      });
     }
   });
 };

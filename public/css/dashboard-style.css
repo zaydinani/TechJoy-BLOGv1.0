@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
 }
+
 /*! required for js to work for sidebar */
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
@@ -209,13 +210,14 @@ body {
   background-color: var(--action-color);
   color: #fff;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 30px;
   border: none;
   border-radius: 4px;
   height: 32px;
   padding: 0 16px;
   transition: 0.2s;
   cursor: pointer;
+  text-decoration: none;
 }
 .delete {
   background-color: red;
@@ -624,3 +626,9 @@ body {
     opacity: 1;
   }
 }
+/** ///// ADDING NEW TAG STYLE */
+#addNewTag {
+  padding: 0 10px !important;
+  background-color: #6291fd !important;
+}
+/** ///// ADDING NEW TAG STYLE */

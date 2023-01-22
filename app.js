@@ -3,13 +3,30 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const MySQLStore = require("express-mysql-session")(session);
+const multer = require("multer");
+
+////////////////////////////////////
+////////////////////////////////////
 const app = express();
 // *SETING TAMPLATE ENGINE
 app.set("view engine", "ejs");
 app.set("views", "views");
 
 app.use(bodyParser.urlencoded({ extended: false }));
+// config Multer
+const fileStorge = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "articlesImages");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+
+//* initialize Multer
+app.use(multer({ storage: fileStorge }).single("articleImage"));
 // *serving static files
+app.use(express.static(path.join(__dirname, "articlesImages")));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "images")));
 //*intialze session middleware

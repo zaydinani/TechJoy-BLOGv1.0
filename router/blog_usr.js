@@ -1,5 +1,5 @@
 const express = require("express");
-
+const isAuth = require("../middleware/is-Auth");
 const blogController = require("../controllers/blogController");
 const router = express.Router();
 
@@ -11,6 +11,7 @@ router.get("/blog", blogController.getBlogPage);
 router.get("/home", blogController.getHome);
 router.get("/", blogController.getHome);
 
+router.post("/ArticleComment/:userId", isAuth, blogController.postComment);
 router.post("/logOut", blogController.postLogout);
 router.post("/checkin", blogController.postLogin);
 router.post("/register", blogController.postRegister);

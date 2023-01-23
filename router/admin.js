@@ -3,7 +3,6 @@ const DB = require("../utils/database");
 const adminController = require("../controllers/adminControllers");
 
 const router = express.Router();
-//* helowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
 //! dashboard ROUTES
 
 //* get  new articles router

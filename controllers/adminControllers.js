@@ -95,7 +95,7 @@ exports.postNewArticle = (req, res) => {
       title,
       ArtBody,
       ArtHook,
-      `${articleImage.originalname}`,
+      `/${articleImage.originalname}`,
       datetime,
       `${tag.slice(0, 2)}`,
       `${auth_id.slice(0, 2)}`,

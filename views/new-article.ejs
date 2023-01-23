@@ -19,7 +19,7 @@
       src="https://kit.fontawesome.com/53405766b0.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="icon" type="image/x-icon" href="./images/icons8-read-96.png" />
+    <link rel="icon" type="image/x-icon" href="/images/icons8-read-96.png" />
 
     <title>Create new article</title>
     <style>
@@ -35,7 +35,7 @@
       <a href="/dash" id="gb-pg">>> GO BACK</a>
       <h1>CREATE NEW ARTICLE</h1>
       <form
-        action="/creatingArticle"
+        action= <%=editMode? '/updateArticle' : '/creatingArticle' %>
         method="post"
         enctype="multipart/form-data"
       >
@@ -49,13 +49,16 @@
           <% } %>
         </select>
         <label for="tag">Select a tag :</label>
+        <!--TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ADDING NEW TAG -->
         <a id="addNewTag" href="#">Add new tag</a>
+        <!--TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ADDING NEW TAG -->
         <select name="tag" id="tag">
           <!-- displaying tags info -->
           <% if(editMode ==false) {%> <% tags.forEach(tag => {%>
           <option><%= tag.tag_id%> <%= tag.tag_name%></option>
           <% })%> <% }else {%>
-          <option><%= articleData[0].article_id%></option>
+          <option><%= articleData[0].tags_id%></option>
+          
           <% } %>
         </select>
         <label for="img">Select image :</label>
@@ -93,7 +96,10 @@
         <% if(editMode
         ==true){ %><%= articleData[0].article_content%> <% } %>
         </textarea>
-        <button type="submit">SUBMIT</button>
+        <button type="submit"><%=editMode? 'UPDATE' : 'SUBMIT' %></button>
+        <%if(articleData) {%>
+        <input type="hidden" name="article_id" value=<%= articleData[0].article_id%> >
+        <%}%>
       </form>
     </div>
     <%- include('./footer'); -%>

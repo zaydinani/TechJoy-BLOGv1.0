@@ -1,5 +1,3 @@
-const path = require("path");
-
 const express = require("express");
 const DB = require("../utils/database");
 const adminController = require("../controllers/adminControllers");
@@ -45,12 +43,52 @@ router.get("/admin/edit/article/:id", function (req, res, next) {
         articleData: [...rows],
         editMode: true,
       });
-      console.log(rows);
     })
     .catch((err) => {
       console.log(err);
     });
 });
+
+//? UPDATE AN ARTICLE  FROM DASHBOARD
+// Function to get the right format to store date in Mysql
+const datetime = formatDate(new Date());
+function padTo2Digits(num) {
+  return num.toString().padStart(2, "0");
+}
+
+function formatDate(date) {
+  return [
+    date.getFullYear(),
+    padTo2Digits(date.getMonth() + 1),
+    padTo2Digits(date.getDate()),
+  ].join("-");
+}
+
+router.post("/updateArticle", (req, res) => {
+  let artId = req.body.article_id;
+  const articleImage = req.file;
+
+  DB.execute(
+    `UPDATE blog_articles SET article_title = '${
+      req.body.title
+    }' , article_content =' ${req.body.ArtHook}', article_description = '${
+      req.body.ArtBody
+    }' , image_pathLocation =' /${
+      articleImage.originalname
+    }' , article_created_at = '${datetime}', tags_id = ${req.body.tag.slice(
+      0,
+      2
+    )} , author_id = ${req.body.auth_id.slice(0, 2)} WHERE article_id = ${artId}
+`
+  )
+    .then(() => {
+      res.redirect("dash");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 //? DELETE USERS FROM DASHBOARD
 router.get("/admin/delete/user/:id", function (req, res, next) {
   let id = req.params.id;
@@ -65,7 +103,7 @@ router.get("/admin/delete/user/:id", function (req, res, next) {
     });
 });
 
-// * ----------------------------------SHOW ARTICLE
+// * ----------------------------------SHOW ARTICLE CONTETNT
 // TODO: * -------------------------------- SWITCH TO AYSNC AWAIT * --------------------------------
 router.get("/checkArticle/:art_id", (req, res) => {
   let id = req.params.art_id;

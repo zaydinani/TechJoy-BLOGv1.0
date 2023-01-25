@@ -1,6 +1,9 @@
 const express = require("express");
 const DB = require("../utils/database");
 const adminController = require("../controllers/adminControllers");
+const marked = require("marked");
+const createDomPurify = require("dompurify");
+const { JSDOM } = require("jsdom");
 
 const router = express.Router();
 //! dashboard ROUTES
@@ -130,9 +133,11 @@ router.get("/checkArticle/:art_id", (req, res) => {
                   `SELECT user_id,user_name FROM blog_users WHERE user_id IN (${usersIds}) `
                 )
                   .then(([user, field]) => {
+                    console.log(user);
+                    console.log(aComment);
                     res.render("article", {
                       isLoggedIn: req.session.isLoggedIn,
-                      articleData: data,
+                      articleData: marked.use(data),
                       tagData: tagData,
                       comments: aComment,
                       user: user,

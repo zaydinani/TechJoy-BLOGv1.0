@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "name": "techjoy",
+  "dependencies": {
+    "bcrypt": { "version": "5.1.0" },
+    "body-parser": { "version": "1.20.1" },
+    "dompurify": { "version": "2.4.3" },
+    "ejs": { "version": "3.1.8" },
+    "express-mysql-session": { "version": "2.1.8" },
+    "express-session": { "version": "1.17.3" },
+    "express": { "version": "4.18.2" },
+    "jsdom": { "version": "21.1.0" },
+    "marked": { "version": "4.2.12" },
+    "multer": { "version": "1.4.5-lts.1" },
+    "mysql2": { "version": "2.3.3" },
+    "nodemailer": { "version": "6.8.0" }
+  }
+}

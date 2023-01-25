@@ -3,6 +3,8 @@ const isAuth = require("../middleware/is-Auth");
 const blogController = require("../controllers/blogController");
 const router = express.Router();
 
+router.post("/user_profile_update", blogController.postUpdateProfile);
+router.get("/user_profile", blogController.getProfile);
 router.get("/register", blogController.getRegister);
 router.get("/login", blogController.getLogin);
 router.get("/contact", blogController.getContact);

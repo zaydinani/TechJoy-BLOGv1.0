@@ -2,6 +2,7 @@ const dash = require("../models/dash");
 const subscribers = require("../models/subscribers");
 const users = require("../models/user");
 const DB = require("../utils/database");
+const marked = require("marked");
 
 // get route for Create new Article
 
@@ -93,7 +94,7 @@ exports.postNewArticle = (req, res) => {
     "INSERT INTO blog_articles  (article_title, article_content, article_description, image_pathLocation, article_created_at, tags_id, author_id) VALUES (?,?,?,?,?,?,?)",
     [
       title,
-      ArtBody,
+      marked.parse(ArtBody),
       ArtHook,
       `/${articleImage.originalname}`,
       datetime,

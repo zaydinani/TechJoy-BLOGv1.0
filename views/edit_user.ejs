@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./images/icons8-read-96.png"
+      type="image/x-icon"
+    />
+    <!-- //*Footer  -->
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <!-- //*Font awsome  -->
+    <script
+      src="https://kit.fontawesome.com/53405766b0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/edit_profile.css" />
+    <title>PROFILE</title>
+  </head>
+  <body>
+    <%- include('./nav'); -%>
+    <section id="editProfile">
+      <h1>UPDATE YOUR PROFILE</h1>
+      <img src="/images/edit.svg" alt="" />
+      <form action="/user_profile_update" method="post">
+        <h6 id="passwd_err" style="display: none; color: red">
+          unmatched password
+        </h6>
+        <% if(errMsg) { %>
+        <span style="text-transform: uppercase; color: red">
+          <%= errMsg %>
+        </span>
+        <% } %>
+        <input
+          placeholder="Full Name"
+          type="text"
+          name="full_Name"
+          id="full_Name"
+          autocomplete="off"
+          value="<%=userData[0].user_name %>"
+          required
+        />
+        <input
+          placeholder="Email"
+          type="email"
+          name="Reg_email"
+          id="email"
+          autocomplete="off"
+          value="<%=userData[0].user_email%>"
+          required
+        />
+        <input
+          placeholder="Enter new password"
+          type="password"
+          name="password"
+          id="password"
+          autocomplete="off"
+          minlength="8"
+          required
+        />
+        <input
+          placeholder="Confirm new Password"
+          type="password"
+          name="Cpassword"
+          id="Cpassword"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" id="sub">update</button>
+        <a href="home">Never mind</a>
+      </form>
+    </section>
+    <%- include('./footer'); -%>
+    <script>
+      // DROP DOWN MENU
+      const myAccBtn = document.querySelector("nav > span");
+      const dropMenu = document.querySelector(".dropdown_menu");
+      if (myAccBtn)
+        myAccBtn.addEventListener("click", () => {
+          dropMenu.classList.toggle("dropdown_Active");
+        });
+      // PASS ERROR
+      const subBtn = document.getElementById("sub");
+      const password = document.getElementById("password");
+      const Cpassword = document.getElementById("Cpassword");
+      const passwd_err = document.getElementById("passwd_err");
+
+      subBtn.addEventListener("click", (e) => {
+        if (password.value != Cpassword.value) {
+          e.preventDefault();
+          passwd_err.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>

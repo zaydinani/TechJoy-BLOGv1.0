@@ -365,7 +365,8 @@ nav .hamContainer .line2 {
   padding: 10px;
 }
 .articleContainer .comments .comment_slot p {
-  margin-top: 1rem;
+  margin: 1rem 0.5rem 0 3rem;
+  font-weight: bold;
 }
 .articleContainer .comments .comment_slot .user_data {
   width: 100%;
@@ -374,9 +375,27 @@ nav .hamContainer .line2 {
   align-items: center;
   gap: 1rem;
 }
-.articleContainer .comments .comment_slot .user_data img {
-  height: 100%;
+.articleContainer .comments .comment_slot .user_data #indetImg {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
+  background-color: rgb(7, 177, 72);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.articleContainer .comments .comment_slot .user_data #indetImg h6 {
+  color: azure;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.articleContainer .comments .comment_slot .user_data h4 {
+  text-decoration: underline;
+  color: #555;
 }
 .articleContainer .comments .comment_slot .user_data span {
   font-size: 0.9rem;

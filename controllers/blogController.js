@@ -4,6 +4,51 @@ const nodemailer = require("nodemailer");
 const DB = require("../utils/database");
 const bcrypt = require("bcrypt");
 
+exports.getProfile = (req, res, next) => {
+  DB.execute(
+    `SELECT user_name ,user_email from blog_users WHERE user_id = ${req.session.userId}`
+  )
+    .then(([row, fieldData]) => {
+      res.render("edit_user", {
+        isLoggedIn: req.session.isLoggedIn,
+        errMsg: false,
+        userData: row,
+      });
+    })
+    .catch((err) => console.log(err));
+};
+
+//update profile
+exports.postUpdateProfile = (req, res, next) => {
+  DB.execute(
+    `SELECT user_name , user_email FROM blog_users WHERE user_email = '${req.body.Reg_email}'`
+  )
+    .then(([row, fieldData]) => {
+      if (row.length > 0) {
+        res.render("edit_user", {
+          isLoggedIn: req.session.isLoggedIn,
+          errMsg: "Email is already taken please try again",
+          userData: row,
+        });
+      } else {
+        bcrypt.hash(req.body.password, 10, function (err, hash) {
+          DB.execute(
+            `UPDATE blog_users SET user_name = '${req.body.full_Name}', user_email ='${req.body.Reg_email}',
+             user_password = '${hash}' WHERE user_id = ${req.session.userId}`
+          )
+            .then(() => {
+              req.session.destroy(() => {
+                res.redirect("/");
+              });
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        });
+      }
+    })
+    .catch((err) => console.log(err));
+};
 exports.getLogin = (req, res, next) => {
   res.render("login", {
     errMsg: false,
@@ -76,6 +121,7 @@ function formatDate(date) {
     ].join(":")
   );
 }
+
 // Adding New  Comment
 exports.postComment = (req, res, next) => {
   const userId = req.session.userId;

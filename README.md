@@ -56,6 +56,8 @@ PASSWORD=db.password
 DIALECT=mysql
 
 * Node mailer 
+
 MAILER_USER = Your gmail mailing account
+
 MAILER_PASS = Your gmail mailing PASSWORD
 

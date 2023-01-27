@@ -42,11 +42,11 @@ $ npm start
 STATUS= Development
 
 * Development port
-* 
+
 DEV_PORT=3000
 
 * DB CONFIG
-* 
+
 HOST=localhost 
 
 USER=root

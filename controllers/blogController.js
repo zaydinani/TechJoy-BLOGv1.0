@@ -245,13 +245,13 @@ exports.postThankPage = (req, res, next) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "techJoyMailer22@gmail.com",
-      pass: "sbkjkcwyjkuhldze",
+      user: process.env.MAILER_USER,
+      pass: process.env.MAILER_PASS,
     },
   });
 
   const mailOptions = {
-    from: "techJoyMailer22@gmail.com",
+    from: process.env.MAILER_USER,
     to: "marsoumtm@gmail.com",
     subject: contactor_sub,
     html: `
@@ -290,13 +290,13 @@ exports.postContactPage = (req, res, next) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "techJoyMailer22@gmail.com",
-      pass: "sbkjkcwyjkuhldze",
+      user: process.env.MAILER_USER,
+      pass: process.env.MAILER_PASS,
     },
   });
 
   const mailOptions = {
-    from: "techJoyMailer22@gmail.com",
+    from: process.env.MAILER_USER,
     to: "marsoumtm@gmail.com",
     subject: `@TechJoy check out  new message from ${conta_name}  `,
     html: `

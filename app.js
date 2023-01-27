@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const MySQLStore = require("express-mysql-session")(session);
 const multer = require("multer");
-
+require("dotenv").config();
 ////////////////////////////////////
 ////////////////////////////////////
 const app = express();
@@ -33,8 +33,8 @@ app.use(express.static(path.join(__dirname, "images")));
 let options = {
   host: "localhost",
   user: "root",
-  password: "Mtm2022!4L",
-  database: "tech_joy",
+  password: process.env.PASSWORD,
+  database: process.env.DB,
 };
 let sessionStore = new MySQLStore(options);
 app.use(
@@ -52,5 +52,4 @@ const adminRouter = require("./router/admin");
 
 app.use(blogRouter);
 app.use(adminRouter);
-const port = 3000;
-app.listen(port);
+app.listen(process.env.DEV_PORT);

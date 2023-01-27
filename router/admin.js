@@ -2,8 +2,6 @@ const express = require("express");
 const DB = require("../utils/database");
 const adminController = require("../controllers/adminControllers");
 const marked = require("marked");
-const createDomPurify = require("dompurify");
-const { JSDOM } = require("jsdom");
 
 const router = express.Router();
 //! dashboard ROUTES

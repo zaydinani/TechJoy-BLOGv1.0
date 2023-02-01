@@ -30,6 +30,25 @@
     </style>
   </head>
   <body>
+        <!-- Modal content -->
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="form-content">
+
+              <h1>write tag name</h1>
+              <form action="add-tag" method="post">
+              <input type="text" name="tag">
+                <button class="button" type="submit">
+                  add
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
     <img src="/images/artImg.svg" alt="" />
     <div class="container">
       <a href="/dash" id="gb-pg">>> GO BACK</a>
@@ -50,7 +69,7 @@
         </select>
         <label for="tag">Select a tag :</label>
         <!--TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ADDING NEW TAG -->
-        <a id="addNewTag" href="#">Add new tag</a>
+        <a class="addNewTag" id="myBtn" href="#">Add new tag</a>
         <!--TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ADDING NEW TAG -->
         <select name="tag" id="tag">
           <!-- displaying tags info -->
@@ -110,7 +129,32 @@
       if (myAccBtn)
         myAccBtn.addEventListener("click", () => {
           dropMenu.classList.toggle("dropdown_Active");
-        });
+      });
+      // Get the modal
+      const modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      const btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      const span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
     </script>
   </body>
 </html>

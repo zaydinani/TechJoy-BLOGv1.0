@@ -23,11 +23,29 @@
       </div>
     </div>
   </span>
+  <% }else if(isAdmin) { %>
+    <ul>
+      <li><a href="/home">home</a></li>
+      <li><a href="/blog">blog</a></li>
+      <li><a href="/dash">Admin</a></li>
+      <li><a href="/contact">contact us</a></li>
+    </ul>
+      <!-- admin  -->
+      <span>
+        admin
+        <div class="dropdown_menu">
+          <div class="option">
+            <i class="fa-sharp fa-solid fa-right-from-bracket"></i>
+            <form action="/logOut" method="post">
+              <button type="submit">log out</button>
+            </form>
+          </div>
+        </div>
+      </span>
   <% }else { %>
   <ul>
     <li><a href="/home">home</a></li>
     <li><a href="/blog">blog</a></li>
-    <li><a href="/dash">Admin</a></li>
     <li><a href="/contact">contact us</a></li>
   </ul>
   <!-- /login -->

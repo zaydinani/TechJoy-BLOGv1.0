@@ -2,23 +2,51 @@ const express = require("express");
 const DB = require("../utils/database");
 const adminController = require("../controllers/adminControllers");
 const marked = require("marked");
+const isAdmin = require("../middleware/is-admin");
 
 const router = express.Router();
+
+//! admins routes 
+//? admin sign up 
+router.post("/admin_register",isAdmin, adminController.postAdminRegister);
+router.get("/admin_register",isAdmin, adminController.getAdminRegister);
+//? admin sign in 
+router.post("/admin_signIn", adminController.postAdminSignIn);
+router.get("/admin_signIn", adminController.getAdminSignIn);
+
+
+
 //! dashboard ROUTES
-
-//* get  new articles router
-router.get("/new-article", adminController.getNewArticle);
-//* POST  new articles router
-router.post("/creatingArticle", adminController.postNewArticle);
-
-// articles router for dashboard
-router.get("/dash", adminController.getArticles);
-// subscribers router for dashboard
-router.get("/subscribers", adminController.getSubscribers);
-// users router for dashboard
-router.get("/users", adminController.getUsers);
+//* get new articles router
+router.get("/new-article", isAdmin, adminController.getNewArticle);
+//* POST new articles router
+router.post("/creatingArticle", isAdmin, adminController.postNewArticle);
+//* get new tag router
+router.post("/add-tag", isAdmin, adminController.addTag);
+//* articles router for dashboard
+router.get("/dash", isAdmin, adminController.getArticles);
+//* subscribers router for dashboard
+router.get("/subscribers", isAdmin, adminController.getSubscribers);
+//* users router for dashboard
+router.get("/users", isAdmin, adminController.getUsers);
+//* admins router for dashboard
+router.get("/admins", isAdmin, adminController.getAdmins);
 
 //! CRUD OPERATIONS FOR DASHBOARD
+//? DELETE admin FROM DASHBOARD
+router.get("/admin/delete/admin/:id", function (req, res, next) {
+  let id = req.params.id;
+  let query = `delete from blog_admins where admin_id = ?`;
+  DB.execute(query, [id])
+    .then(() => {
+      res.redirect("back");
+      console.log("admin deleted successfully");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 //? DELETE ARTICLE FROM DASHBOARD
 router.get("/admin/delete/article/:id", function (req, res, next) {
   let id = req.params.id;
@@ -64,6 +92,7 @@ function formatDate(date) {
   ].join("-");
 }
 
+
 router.post("/updateArticle", (req, res) => {
   let artId = req.body.article_id;
   const articleImage = req.file;
@@ -103,8 +132,8 @@ router.get("/admin/delete/user/:id", function (req, res, next) {
     });
 });
 
-// * ----------------------------------SHOW ARTICLE CONTETNT
-// TODO: * -------------------------------- SWITCH TO AYSNC AWAIT * --------------------------------
+// * ----------------------------------SHOW ARTICLE CONTENT
+// TODO: * -------------------------------- SWITCH TO ASYNC AWAIT * --------------------------------
 router.get("/checkArticle/:art_id", (req, res) => {
   let id = req.params.art_id;
   // * FETCHING ARTICLE DATA
@@ -135,6 +164,7 @@ router.get("/checkArticle/:art_id", (req, res) => {
                     console.log(aComment);
                     res.render("article", {
                       isLoggedIn: req.session.isLoggedIn,
+                      isAdmin: req.session.isAdmin,
                       articleData: marked.use(data),
                       tagData: tagData,
                       comments: aComment,
@@ -148,6 +178,7 @@ router.get("/checkArticle/:art_id", (req, res) => {
               } else {
                 res.render("article", {
                   isLoggedIn: req.session.isLoggedIn,
+                  isAdmin: req.session.isAdmin,
                   articleData: data,
                   tagData: tagData,
                   comments: aComment,

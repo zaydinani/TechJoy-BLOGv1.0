@@ -19,27 +19,34 @@
             <!--!   -------------------------------subscriber tab-------------------------------------------------------------------->
             <div class="subscribers tabcontent slide-in-top" id="subscribers">
                 <div class="app-content-header">
-                  <h1 class="app-content-headerText">subscribers</h1>
+                  <h1 class="app-content-headerText">admins</h1>
+                  <a class="app-content-headerButton" href="admin_register">
+                    Add admin
+                  </a>
                 </div>
                 <div class="app-content-actions">
                   <input class="search-bar" placeholder="Search..." type="text" />
                 </div>
                 <div class="products-area-wrapper tableView">
                   <div class="products-header">
-                    <div class="product-cell admin">email</div>
-                    <div class="product-cell date">date</div>
+                    <div class="product-cell admin">username</div>
+                    <div class="product-cell date">email</div>
                   </div>
-                  <% for(let i = 0; i < subscribers.length ; i++) { %>
+                  <% for(let i = 0; i < admins.length ; i++) { %>
                     <div class="products-row">
                       <div class="product-cell admin">
-                        <span class="cell-label">email:</span><%=subscribers[i].subscriber_email %>
+                        <span class="cell-label">username:</span><%=admins[i].admin_username %>
                       </div>
                       <div class="product-cell date">
-                        <span class="cell-label">date-subscribed:</span><%=subscribers[i].subscriber_subscribed_at.toLocaleDateString('en-US', {
-                          month: 'long',
-                          day: 'numeric',
-                          year: 'numeric'
-                        })  %>
+                        <span class="cell-label">email:</span><%=admins[i].admin_email %>
+                      </div>
+                      <div class="product-cell">
+                        <form
+                          action="/admin/delete/admin/<%=admins[i].admin_id%>"
+                          method="get"
+                        >
+                          <button class="delete" type="submit">delete</button>
+                        </form>
                       </div>
                     </div>
                   <% } %>

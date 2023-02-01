@@ -15,8 +15,7 @@
   <body>
     <div class="session">
       <div class="left"></div>
-      <form action="/register" method="POST" class="log-in" autocomplete="off">
-        <h4><span>TechJoy</span></h4>
+      <form action= <%= admin ? '/admin_register' : '/register' %> method="POST" class="log-in" autocomplete="off"  enctype="multipart/form-data">        <h4><span>TechJoy</span></h4>
         <p>Welcome Welcome !</p>
         <span id="passwd_err"> unmatched password </span>
         <% if(errMsg) { %>
@@ -156,7 +155,9 @@
             </svg>
           </div>
         </div>
-        <button type="submit" id="sub">sign up</button>
+        <% if(admin == true) %>
+        <button type="submit" id="sub"><%=admin? 'admin register' : 'register'%></button>
+        %>
         <a href="login" class="discrete">Already have an account</a>
       </form>
     </div>

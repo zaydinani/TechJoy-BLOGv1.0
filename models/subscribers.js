@@ -6,7 +6,7 @@ module.exports = class dashSubscribers {
     return DB.execute(
       `
         SELECT * FROM blog_subscribers
-        `
+      `
     );
   }
 };

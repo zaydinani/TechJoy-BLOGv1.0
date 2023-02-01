@@ -85,7 +85,7 @@
 
     <div class="Rec__articlesWrp">
       <div class="recent__artContainer">
-          <% for(let i=1; i <articlesData.length;i++) { %>
+          <% for(let i=articlesData.length - 2; i >= 0 ; i--) { %>
               <article>
                 <div class="img_wpr">
                   <a href="checkArticle/<%=articlesData[i].article_id %>">
@@ -124,10 +124,10 @@
             <hr />
           <div class="content-tags">
             <% for(let i=0; i <articlesData.length;i++) { %>
-            <button>
-              <%=articlesData[i].tag_name %>
-            </button>
-          <% } %> 
+              <button>
+                <%=articlesData[i].tag_name %>
+              </button>
+            <% } %> 
           </div>
       </div>
     </div>

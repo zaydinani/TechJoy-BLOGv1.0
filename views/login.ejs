@@ -15,7 +15,7 @@
   <body>
     <div class="session">
       <div class="left"></div>
-      <form action="/checkin" class="log-in" method="post">
+      <form action= <%= admin ? '/admin_signIn' : "/checkin" %> class="log-in" method="post">
         <span>TechJoy</span>
         <% if(errMsg) {%>
         <h5 style="color: red"><%=errMsg%></h5>
@@ -86,7 +86,9 @@
             </svg>
           </div>
         </div>
-        <button type="submit">Log in</button>
+        <% if(admin == true) %>
+        <button type="submit"><%=admin? 'admin log in' : 'log in'%></button>
+        %>        
         <a href="register" class="discrete">No account, sign up </a>
       </form>
     </div>

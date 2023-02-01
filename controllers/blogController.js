@@ -11,6 +11,7 @@ exports.getProfile = (req, res, next) => {
     .then(([row, fieldData]) => {
       res.render("edit_user", {
         isLoggedIn: req.session.isLoggedIn,
+        isAdmin: req.session.isAdmin,
         errMsg: false,
         userData: row,
       });
@@ -52,21 +53,25 @@ exports.postUpdateProfile = (req, res, next) => {
 exports.getLogin = (req, res, next) => {
   res.render("login", {
     errMsg: false,
+    admin: false,
   });
 };
 exports.getRegister = (req, res, next) => {
   res.render("register", {
     errMsg: false,
+    admin: false,
   });
 };
 exports.getContact = (req, res, next) => {
   res.render("contact", {
     isLoggedIn: req.session.isLoggedIn,
+    isAdmin: req.session.isAdmin,
   });
 };
 exports.getFAQ = (req, res, next) => {
   res.render("FAQ", {
     isLoggedIn: req.session.isLoggedIn,
+    isAdmin: req.session.isAdmin,
   });
 };
 
@@ -77,6 +82,8 @@ exports.getBlogPage = (req, res, next) => {
       res.render("blog", {
         articlesData: rows,
         isLoggedIn: req.session.isLoggedIn,
+        isAdmin: req.session.isAdmin,
+
       });
     })
     .catch((err) => {
@@ -91,6 +98,8 @@ exports.getHome = (req, res, next) => {
       res.render("home", {
         artl: rows,
         isLoggedIn: req.session.isLoggedIn,
+        isAdmin: req.session.isAdmin,
+
       });
     })
     .catch((err) => {
@@ -155,6 +164,7 @@ exports.postLogin = (req, res, next) => {
           res.redirect("/");
         } else {
           res.render("login", {
+            admin: false,
             errMsg: "Either email or password is incorrect",
           });
           console.log("failed" + " " + err);
@@ -174,6 +184,8 @@ exports.postRegister = (req, res, next) => {
         if (row.user_email == req.body.Reg_email) {
           res.render("register", {
             errMsg: "THIS EMAIL IS TAKEN PLEASE TRY ANOTHER EMAIL",
+            admin: false,
+
           });
           return (taken = true);
         }
@@ -193,6 +205,7 @@ exports.postRegister = (req, res, next) => {
             .then(() => {
               res.render("login", {
                 errMsg: false,
+                admin: false,
               });
             })
             .catch((err) => {
